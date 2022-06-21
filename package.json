@@ -1,0 +1,15 @@
+{
+  "name": "omirussia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.addamant-work.ru/initial/omirussia.git"
+  },
+  "author": "Zubarev@addamant.ru",
+  "license": "ISC"
+}
