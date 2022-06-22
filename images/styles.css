@@ -21,7 +21,6 @@
   --header-4: 500 24px/31.2px sans-serif;
   --caption: 400 24px/31.87px sans-serif;
   --paragraph: 400 20px/28px "Inter", sans-serif;
-  --landing-width: 1360px;
 }
 
 @font-face {
@@ -41,10 +40,6 @@ p,
 ul {
   padding: 0;
   margin: 0;
-}
-
-img {
-  max-width: 100%;
 }
 
 .content {
@@ -104,13 +99,7 @@ img {
   font-weight: 600;
   line-height: 24px;
   letter-spacing: 0em;
-  padding: 20px 32px;
   text-align: left;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-width: 0;
-  border-radius: 200px;
 }
 
 .secondaryBtn:hover,
@@ -199,91 +188,14 @@ img {
   gap: 12px;
 }
 
-.header__navigation-mobile {
-  display: none;
-  transition: all 0.5s ease;
-}
-
-.header__logo {
+.header__navigation__logo {
   padding-right: 20px;
-}
-
-.header__navlist-closed {
-  display: none;
-  transform: translateY(-700px);
-}
-
-.header__navlist-opened {
-  display: flex;
-  flex-direction: column;
-  height: 600px;
-  padding: 0 20px;
-  transform: translateY(0);
-}
-
-.menu__mobile {
-  width: 20px;
-  height: 26px;
-  border: none;
-  background-color: var(--purple-color);
-  padding: 0;
-  margin: 0;
-}
-
-.menu__icon,
-.menu__mobile:before,
-.menu__mobile:after {
-  background: var(--black-color);
-  content: "";
-  display: block;
-  height: 2px;
-  border-radius: 10px;
-  margin: 5px 0;
-  transition: 0.5s;
-}
-
-.menu__mobile-opened .menu__icon {
-  transform: scale(0);
-}
-.menu__mobile-opened:before {
-  transform: translateY(8px) rotate(135deg);
-}
-.menu__mobile-opened:hover:after {
-  transform: translateY(-6px) rotate(-135deg);
-}
-
-.header__buttonBlock-mobile {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.header__links-mobile {
-  margin-top: 42px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.header__link-mobile {
-  font-size: 44px;
-  line-height: 58px;
-  letter-spacing: 0em;
-  color: var(--white-color);
-  text-decoration: none;
 }
 
 .header__loginBlock {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 24px;
-}
-
-.header__loginBlock-mobile {
-  margin-top: 153px;
-  display: flex;
-  flex-direction: column;
   gap: 24px;
 }
 
@@ -305,20 +217,20 @@ img {
   gap: 30px;
 }
 
-.earnMoneyBlock__info {
+.earnMoneyBlock__description {
   padding-right: 135px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.earnMoneyBlock__title {
+.earnMoneyBlock__description__header {
   margin-top: 60px;
   font: var(--header-1);
   color: var(--white-color);
 }
 
-.earnMoneyBlock__description {
+.earnMoneyBlock__description__text {
   margin-top: 32px;
   font: var(--caption);
   color: var(--white-color);
@@ -360,7 +272,6 @@ img {
   width: 100%;
   max-width: 1360px;
   display: grid;
-
   grid-template-columns: repeat(2, 1fr);
   gap: 240px;
 }
@@ -386,18 +297,16 @@ img {
   margin-top: 12px;
   font-size: 20px;
   line-height: 30px;
-  padding-bottom: 44px;
   letter-spacing: 0em;
   color: var(--gray);
+  padding-bottom: 44px;
 }
 
 .aboutSurveys__description-medium {
   padding-right: 173px;
 }
-
 .aboutSurveys__easyToEarnBlock__adBlock {
   max-width: 410px;
-  width: 69.5vw;
   background-image: url("./images/Blue.png");
   background-size: cover;
   display: flex;
@@ -406,7 +315,6 @@ img {
 }
 
 .aboutSurveys__easyToEarnBlock__adBlock__mockup {
-  width: 85%;
   margin-top: 24px;
   -webkit-clip-path: url(#adBlockMask);
   clip-path: url(#adBlockMask);
@@ -417,17 +325,17 @@ img {
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
+  min-height: 605px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: stretch;
+  transition: all 0.5 ease-in;
   border-radius: 32px;
-  transition: all 0.5s ease-in;
-  aspect-ratio: 53/55;
 }
 
 .aboutSurveys__infoCard:hover {
-  transform: scale(0.9);
+  background-size: 90% 90%;
 }
 
 .aboutSurveys__infoText {
@@ -555,167 +463,4 @@ img {
   line-height: 23px;
   letter-spacing: 0em;
   text-align: left;
-}
-
-.counter {
-  height: 1em;
-  overflow: hidden;
-  display: flex;
-}
-
-.digits {
-  display: flex;
-  flex-direction: column;
-  list-style-type: none;
-  font-size: 1em;
-  line-height: 1em;
-  margin-top: 0;
-  transition: all 2.5s ease;
-}
-@media screen and (max-width: var(--landing-width)) {
-  .header {
-    padding: 0 20px;
-  }
-  .earnMoneyBlock {
-    gap: 0;
-  }
-
-  .earnMoneyBlock__info {
-    padding-right: 0;
-    padding: 0 20px;
-    align-items: center;
-  }
-}
-
-@media screen and (max-width: 1120px) {
-  .earnMoneyBlock__imageContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-}
-
-@media screen and (max-width: 1023px) {
-  .earnMoneyBlockContainer {
-    min-height: 0;
-    height: 578px;
-    padding: 0 20px;
-  }
-  .earnMoneyBlock {
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: auto;
-    padding: 0 20px;
-    max-height: 578px;
-    gap: 0;
-  }
-  .earnMoneyBlock__title {
-    font-size: 32px;
-    line-height: 40px;
-    margin-top: 28px;
-  }
-  .earnMoneyBlock__info {
-    padding-right: 60px;
-  }
-  .earnMoneyBlock__description {
-    font-size: 16px;
-    line-height: 22px;
-    margin-top: 8px;
-    padding-bottom: 20px;
-  }
-  .primaryBtn-large {
-    width: 35%;
-    min-width: 129px;
-    height: 51px;
-    font-size: 16px;
-    line-height: 19px;
-    padding: 16px 20px;
-  }
-  .btn-fullwidth {
-    width: 100%;
-    padding: 20px 32px;
-  }
-  .header-mobile {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-  .header {
-    display: none;
-  }
-
-  .headerContainer {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
-    padding: 0 20px;
-  }
-  .header__logo {
-    max-width: 137px;
-    display: flex;
-  }
-  .header__navigation-mobile {
-    padding: 16px 20px 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .earnMoneyBlock__image {
-    max-width: 335px;
-    left: calc(50% - 167.5px);
-  }
-  .aboutSurveys {
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-  .aboutSurveys__infoBlock {
-    margin: 0 auto;
-    align-items: center;
-  }
-  .aboutSurveys__title {
-    font-size: 24px;
-    line-height: 32px;
-    max-width: 90%;
-  }
-  .aboutSurveys__description {
-    font-size: 16px;
-    line-height: 24px;
-    max-width: 90%;
-    text-align: center;
-  }
-  .aboutSurveys__description-medium {
-    padding-right: 0;
-  }
-  .aboutSurveysContainer {
-    background-size: 100% 37.5%, 100% 42.5%;
-    background-position: left 23%, right 100%;
-  }
-  .makeCharityBlock {
-    width: 95%;
-  }
-  .aboutSurveys__infoCard {
-  }
-  .aboutSurveys__infoCard__title {
-    font-size: 20px;
-    line-height: 26px;
-  }
-  .aboutSurveys__infoCard__description {
-    font-size: 12px;
-    line-height: 19px;
-  }
-  .aboutSurveys__infoCard__link__text {
-    font-size: 12px;
-    line-height: 16px;
-  }
-  .simpleAsOneBlock__infoCards {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    max-width: 90%;
-  }
-  .simpleAsOneBlock__title {
-    max-width: 90%;
-  }
-  .simpleAsOneBlock__text {
-    max-width: 90%;
-  }
 }
