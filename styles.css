@@ -1,7 +1,7 @@
 :root {
-  box-sizing: border-box;
   --purple-color: #b68dff;
   --blue-color: #34dbff;
+  --cyan-color: #30cff1;
   --yellow-color: #ffdb22;
   --green-color: #80de5f;
   --pink-color: #ff9bcb;
@@ -10,10 +10,12 @@
   --gray-middle-color: #a8a8a8;
   --dark-gray: #919fa9;
   --deep-blue-color: #170586;
-  --gray: #898989;
+  --gray-color: #898989;
+  --gray-2-color: #5b5b5b;
   --light-gray: #e2e6e9;
   --red-color: #ff4141;
   --silver-color: #f8f8f8;
+  --gray-thin-color: #f1f1f1;
   --silver-thin-color: #fdfdfd;
   --header-1: 400 90px/1 sans-serif;
   --header-2: 400 64px/68px sans-serif;
@@ -47,6 +49,10 @@ img {
   max-width: 100%;
 }
 
+.compainsBlock {
+  box-sizing: border-box;
+}
+
 .content {
   width: 100%;
   text-overflow: ellipsis;
@@ -63,6 +69,11 @@ img {
   color: var(--black-color);
 }
 
+.pageBlock {
+  max-width: var(--landing-width);
+  margin: 0 auto;
+}
+
 .primaryBtn {
   color: var(--white-color);
   background-color: var(--black-color);
@@ -71,11 +82,12 @@ img {
   align-items: center;
   border-width: 0;
   border-radius: 200px;
+  text-align: center;
 }
 
 .primaryBtn-large {
-  width: 213px;
-  padding: 24px 40px;
+  width: 216px;
+  padding: 24px 32px;
   font: 600 24px/29.05px "Inter", sans-serif;
 }
 
@@ -98,7 +110,7 @@ img {
 
 .secondaryBtn {
   color: var(--black-color);
-  background-color: var(--white-color);
+  background-color: var(--gray-thin-color);
   font-family: "Inter", sans-serif;
   font-size: 20px;
   font-weight: 600;
@@ -111,6 +123,7 @@ img {
   align-items: center;
   border-width: 0;
   border-radius: 200px;
+  text-align: center;
 }
 
 .secondaryBtn:hover,
@@ -500,13 +513,14 @@ img {
   margin-top: 44px;
   display: grid;
   grid-auto-flow: row;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(241px, 1fr));
   grid-template-rows: 1fr;
   gap: 20px;
 }
 
 .simpleAsOneBlock__infoCard {
   height: 228px;
+  border-radius: 20px;
   background-color: var(--silver-color);
   background-repeat: no-repeat;
   background-position: right bottom;
@@ -557,7 +571,60 @@ img {
   text-align: left;
 }
 
+.talkingAboutBlockContainer {
+  width: 100vw;
+  min-height: 617px;
+  padding: 123px 0;
+  background-color: var(--cyan-color);
+  border: 1px solid var(--cyan-color);
+  border-radius: 50px;
+  color: var(--white-color);
+}
+
+.talkingAboutBlock {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: var(--landing-width);
+  background-image: url("./images/TalkingBubble.png");
+  background-position: 80% 100%;
+  background-repeat: no-repeat;
+  align-items: center;
+  text-align: center;
+}
+
+.talkingAboutBlock__title {
+  font-size: 64px;
+  line-height: 85px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.talkingAboutBlock__description {
+  font-size: 24px;
+  line-height: 32px;
+  margin-top: 8px;
+}
+
+.talkingAboutBlock__counterBlock {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.talkingAboutBlock__counterTitle {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
 .counter {
+  font-size: 180px;
+  font-weight: 500;
+  line-height: 239px;
+  letter-spacing: 0em;
+  text-align: center;
   height: 1em;
   overflow: hidden;
   display: flex;
@@ -570,28 +637,176 @@ img {
   font-size: 1em;
   line-height: 1em;
   margin-top: 0;
-  transition: all 2.5s ease;
+  transition: all 2s ease;
 }
-@media screen and (max-width: var(--landing-width)) {
-  .header {
-    padding: 0 20px;
-  }
-  .earnMoneyBlock {
-    gap: 0;
-  }
 
+.talkingAboutBlock__counterText {
+  font-family: "Inter", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 32px;
+  padding-bottom: 70px;
+}
+
+.compainsBlock {
+  width: 100%;
+  display: grid;
+  grid-template-areas: "info btnGroup" "slider slider";
+  gap: 44px;
+  padding: 100px 0 120px 0;
+  align-items: flex-end;
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.compainsBlock__header {
+  width: 100%;
+  max-width: 680px;
+  grid-area: info;
+}
+
+.caption {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0em;
+}
+
+.caption-gray {
+  color: var(--gray-color);
+}
+
+.title {
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 68px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.compainsBlock__title {
+  margin-top: 16px;
+}
+
+.description {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.description-gray {
+  color: var(--gray-2-color);
+}
+
+.compainsBlock__description {
+  margin-top: 12px;
+}
+
+.btnGroup {
+  display: flex;
+  justify-content: space-between;
+}
+
+.compainsBlock__btnGroup {
+  grid-area: btnGroup;
+  justify-content: flex-end;
+}
+
+.compainsBlock__secondaryBtn {
+  width: 234px;
+  padding: 20px 32px;
+  margin-right: 24px;
+}
+
+.compainsBlock__primaryBtn {
+  width: 219px;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  padding: 20px 32px;
+}
+
+.slider {
+  grid-area: slider;
+  width: 100%;
+  background-color: var(--gray-color);
+  min-height: 813px;
+  border-radius: 50px;
+}
+
+.trustedBlock {
+  min-height: 420px;
+}
+
+.block-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trustedBlock__title {
+  max-width: 488px;
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 58px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.trustedBlock__description {
+  max-width: 488px;
+  line-height: 32px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.logosList {
+  max-width: 812px;
+  margin: 44px 0 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logosList__logo {
+  padding: 20px 17px;
+}
+
+@media screen and (max-width: 1360px) {
+  .headerContainer {
+    padding: 0 20px;
+    width: calc(100% - 40px);
+  }
   .earnMoneyBlock__info {
     padding-right: 0;
-    padding: 0 20px;
-    align-items: center;
+    padding-left: 20px;
   }
-}
-
-@media screen and (max-width: 1120px) {
-  .earnMoneyBlock__imageContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+  .earnMoneyBlock__description {
+    padding-bottom: 30px;
+  }
+  .aboutSurveys {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: calc(100% - 40px);
+    gap: 80px;
+  }
+  .simpleAsOneBlock__infoCards {
+    grid-template-columns: repeat(2, 410px);
+    grid-template-rows: repeat(2, 410px);
+    justify-content: center;
   }
 }
 
@@ -615,6 +830,7 @@ img {
   }
   .earnMoneyBlock__info {
     padding-right: 60px;
+    align-items: center;
   }
   .earnMoneyBlock__description {
     font-size: 16px;
@@ -629,6 +845,11 @@ img {
     font-size: 16px;
     line-height: 19px;
     padding: 16px 20px;
+  }
+  .primaryBtn-small {
+    width: 123px;
+    font-size: 12px;
+    line-height: 16px;
   }
   .btn-fullwidth {
     width: 100%;
@@ -648,6 +869,7 @@ img {
     justify-content: flex-start;
     align-items: stretch;
     padding: 0 20px;
+    width: 100vw;
   }
   .header__logo {
     max-width: 137px;
@@ -708,7 +930,7 @@ img {
     line-height: 16px;
   }
   .simpleAsOneBlock__infoCards {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(334px, 520px);
     grid-template-rows: auto;
     max-width: 90%;
   }
@@ -717,5 +939,47 @@ img {
   }
   .simpleAsOneBlock__text {
     max-width: 90%;
+  }
+  .talkingAboutBlockContainer {
+    padding: 40px 5% 16px 5%;
+    width: 90%;
+    margin-top: 40px;
+    height: 450px;
+    min-height: fit-content;
+  }
+  .talkingAboutBlock__title {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  .talkingAboutBlock__description {
+    margin-top: 4px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .talkingAboutBlock__counterBlock {
+    margin-top: 40px;
+  }
+  .talkingAboutBlock__counterTitle {
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .counter {
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 85px;
+    margin-top: 8px;
+  }
+  .talkingAboutBlock__counterText {
+    font-size: 20px;
+    line-height: 32px;
+    margin-top: 0;
+
+    padding-bottom: 141px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .primaryBtn-large {
+    align-self: flex-start;
   }
 }
