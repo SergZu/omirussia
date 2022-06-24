@@ -12,7 +12,7 @@
   <body class="page">
     <main class="content">
       <div class="container">
-        <header class="headerContainer">
+        <header class="headerContainer ">
           <div class="header">
             <nav class="header__navigation">
               <div class="header__navigation__logo">
@@ -149,7 +149,7 @@
         </div>
         
       </div>
-        <div class="simpleAsOneBlock">
+        <div class="simpleAsOneBlock pageBlock">
           <h2 class="simpleAsOneBlock__title">Simple as one-two-three</h2>
           <p class="simpleAsOneBlock__text">Some sample text to fill</p>
           <div class="simpleAsOneBlock__infoCards">
@@ -198,17 +198,16 @@
                 </p>
                 <button class="primaryBtn primaryBtn-large btn-fullwidth">Start earning</button>
               </div>
-          </div>
-        </div>
+            </div>
         <div class="compainsBlock pageBlock">
           <div class="info compainsBlock__header">
-            <p class="caption caption-gray">Caring Community</p>
+            <p class="caption caption-gray compainsBlock__caption">Caring Community</p>
             <h2 class="title compainsBlock__title">Together we can achieve more</h2>
             <p class="description compainsBlock__description">Even you can't help people in person, you can use your time to affect their story. Don't forget that small deeds can mean a lot.</p>
           </div>
           <div class="btnGroup compainsBlock__btnGroup">
-            <button class="secondaryBtn compainsBlock__secondaryBtn">About campaigns</button>
-            <button class="primaryBtn primaryBtn-large compainsBlock__primaryBtn">Join community</button>
+            <button class="secondaryBtn compainsBlock__secondaryBtn btn-fullwidth">About campaigns</button>
+            <button class="primaryBtn primaryBtn-large compainsBlock__primaryBtn btn-fullwidth">Join community</button>
           </div>
           <div class="slider"></div>
         </div>
@@ -231,7 +230,52 @@
             <li class="logosList__logo"><img src="./images/logos/McKinsey_and_Company_Logo.png" alt="logo" class="logo-image" loading="lazy" /></li>
             <li class="logosList__logo"><img src="./images/logos/Spotify_logo.png" alt="logo" class="logo-image" loading="lazy" /></li>
           </ul>
-        </div> 
+        </div>
+        <div class="getPaidBlock pageBlock block-column">
+          <h2 class="title getPaidBlock__title">Get paid for being heard</h2>
+          <p class="description getPaidBlock__description">1.5 million people are already making money and changing the world with the power of their voice. Be one of them!</p>
+          <button class="primaryBtn primaryBtn-large getPaidBlock-btn btn-fullwidth">Create account</button>
+        </div>
+        <footer class="page__footer footerContainer">
+          <div class="footer pageBlock">
+          <div class="footer__creds logoAndCreds">
+            <div class="footer__logo"><img src="./images/Logo.svg" alt="Company logo" class="logo footer__logoImg" loading="lazy" /></div>
+            <span class="footer__copyrights">
+              <p class="caption caption-gray footer__caption">&copy;2022 RobinhoodSurveys</p>
+              <p class="caption caption-gray footer__caption">All rights reserved</p>
+            </span>
+          </div>
+          <div class="footer__documents">
+            <a href="#" class="link footer__docLink">Privacy policy</a>
+            <a href="#" class="link footer__docLink">Confidentials</a>
+            <a href="#" class="link footer__docLink">Legal notice</a>
+          </div>
+          <div class="footer__socialBlock">
+            <span class="caption caption-gray footer__socialText">We are social. Follow us on</span>
+            <div class="footer__socialLinks socialMediaLinks">
+              <a href="http://facebook.com" class="socialLink">
+                <svg class="socialIcon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M29.3346 16.081C29.3346 8.67208 23.3657 2.66675 16.0013 2.66675C8.63686 2.66675 2.66797 8.67208 2.66797 16.081C2.66797 22.7779 7.54264 28.3272 13.9177 29.3334V19.9592H10.5329V16.0801H13.9177V13.1254C13.9177 9.76364 15.908 7.90586 18.9542 7.90586C20.412 7.90586 21.9391 8.16808 21.9391 8.16808V11.4694H20.2564C18.6004 11.4694 18.0849 12.5041 18.0849 13.5654V16.081H21.7826L21.1915 19.9583H18.0849V29.3334C24.46 28.3272 29.3346 22.7779 29.3346 16.081Z" fill="black"/>
+                </svg>
+              </a>
+              <a href="http://instagram.com" class="socialLink">
+                <svg class="socialIcon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M10.6405 3.078C12.0272 3.01473 12.4692 3 16 3C19.5317 3 19.9728 3.0156 21.3586 3.078C22.7427 3.14127 23.6891 3.36227 24.5159 3.68207C25.383 4.00868 26.1685 4.52033 26.8177 5.1814C27.479 5.83081 27.9907 6.61666 28.3171 7.48413C28.6386 8.31093 28.8587 9.25647 28.922 10.6405C28.9853 12.0272 29 12.4692 29 16C29 19.5308 28.9853 19.9728 28.922 21.3595C28.8587 22.7435 28.6386 23.6891 28.3179 24.5159C27.9913 25.383 27.4797 26.1685 26.8186 26.8177C26.1686 27.4799 25.3825 27.9912 24.5159 28.3171C23.6891 28.6386 22.7435 28.8587 21.3595 28.922C19.9728 28.9853 19.5308 29 16 29C12.4692 29 12.0272 28.9853 10.6405 28.922C9.25647 28.8587 8.31093 28.6386 7.48413 28.3179C6.61704 27.9913 5.83153 27.4797 5.18227 26.8186C4.52013 26.1686 4.0088 25.3825 3.68293 24.5159C3.3614 23.6891 3.14127 22.7435 3.078 21.3595C3.01473 19.9728 3 19.5317 3 16C3 12.4683 3.0156 12.0272 3.078 10.6414C3.14127 9.25733 3.36227 8.31093 3.68207 7.48413C4.00868 6.61703 4.52033 5.83152 5.1814 5.18227C5.8314 4.52013 6.61747 4.0088 7.48413 3.68293C8.31093 3.3614 9.25647 3.14127 10.6405 3.078ZM14.3404 20.0077C14.8667 20.2257 15.4307 20.3379 16.0004 20.3379C17.1508 20.3379 18.2541 19.8809 19.0676 19.0675C19.881 18.254 20.338 17.1507 20.338 16.0003C20.338 14.8498 19.881 13.7465 19.0676 12.9331C18.2541 12.1196 17.1508 11.6626 16.0004 11.6626C15.4307 11.6626 14.8667 11.7748 14.3404 11.9928C13.8141 12.2108 13.336 12.5303 12.9332 12.9331C12.5304 13.3359 12.2109 13.814 11.9929 14.3403C11.7749 14.8666 11.6627 15.4306 11.6627 16.0003C11.6627 16.5699 11.7749 17.1339 11.9929 17.6602C12.2109 18.1865 12.5304 18.6647 12.9332 19.0675C13.336 19.4702 13.8141 19.7898 14.3404 20.0077ZM11.2755 11.2754C12.5286 10.0223 14.2282 9.31826 16.0004 9.31826C17.7725 9.31826 19.4721 10.0223 20.7252 11.2754C21.9784 12.5285 22.6824 14.2281 22.6824 16.0003C22.6824 17.7724 21.9784 19.472 20.7252 20.7252C19.4721 21.9783 17.7725 22.6823 16.0004 22.6823C14.2282 22.6823 12.5286 21.9783 11.2755 20.7252C10.0224 19.472 9.31836 17.7724 9.31836 16.0003C9.31836 14.2281 10.0224 12.5285 11.2755 11.2754ZM24.1637 10.3138C24.4599 10.0176 24.6263 9.61584 24.6263 9.19693C24.6263 8.77802 24.4599 8.37627 24.1637 8.08006C23.8675 7.78384 23.4657 7.61743 23.0468 7.61743C22.6279 7.61743 22.2261 7.78384 21.9299 8.08006C21.6337 8.37627 21.4673 8.77802 21.4673 9.19693C21.4673 9.61584 21.6337 10.0176 21.9299 10.3138C22.2261 10.61 22.6279 10.7764 23.0468 10.7764C23.4657 10.7764 23.8675 10.61 24.1637 10.3138Z" fill="black"/>
+                </svg>       
+              </a>
+              <a href="http://twitter.com" class="socialLink">
+                <svg class="socialIcon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M27.1506 10.291C27.1677 10.535 27.1677 10.779 27.1677 11.0252C27.1677 18.528 21.3851 27.1809 10.8115 27.1809V27.1764C7.68806 27.1809 4.62946 26.2972 2 24.6309C2.45418 24.6849 2.91064 24.7119 3.36823 24.713C5.95671 24.7152 8.4712 23.8574 10.5076 22.2777C8.04776 22.2316 5.89069 20.6474 5.13714 18.3346C5.99883 18.4987 6.8867 18.465 7.73245 18.2368C5.05063 17.7016 3.12122 15.3742 3.12122 12.6713C3.12122 12.6465 3.12122 12.6229 3.12122 12.5993C3.9203 13.0389 4.815 13.2829 5.73019 13.3099C3.20432 11.6425 2.42572 8.32343 3.95104 5.72844C6.86962 9.27575 11.1758 11.4322 15.7984 11.6605C15.3351 9.68838 15.968 7.62184 17.4614 6.23552C19.7767 4.08578 23.4181 4.19596 25.5946 6.48175C26.882 6.23102 28.1159 5.76442 29.2451 5.10331C28.8159 6.41767 27.9178 7.53414 26.7181 8.2436C27.8575 8.11093 28.9707 7.8096 30.0191 7.34975C29.2473 8.49208 28.2752 9.48713 27.1506 10.291Z" fill="black"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer__contact">
+            <p class="footer__contactTitle caption caption-gray">Any questions?</p>
+            <button class="primaryBtn primaryBtn-small footer__contactBtn">Contact us</button>
+          </div>
+        </div>
+        </footer> 
       </div>
     </main>
     <script src="./index.js"></script>

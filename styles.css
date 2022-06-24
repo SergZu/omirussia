@@ -12,10 +12,13 @@
   --deep-blue-color: #170586;
   --gray-color: #898989;
   --gray-2-color: #5b5b5b;
+  --gray-3-color: #b3b3b3;
+  --gray-4-color: #7d7d7d;
   --light-gray: #e2e6e9;
   --red-color: #ff4141;
   --silver-color: #f8f8f8;
   --gray-thin-color: #f1f1f1;
+  --gray-thick-color: #f5f5f5;
   --silver-thin-color: #fdfdfd;
   --header-1: 400 90px/1 sans-serif;
   --header-2: 400 64px/68px sans-serif;
@@ -30,6 +33,22 @@
   font-display: swap;
   font-family: "Inter";
   src: url("/fonts/Inter/static/Inter-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Lato";
+  src: url("/fonts/Lato/Lato-Regular.ttf") format("ttf");
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body,
@@ -49,8 +68,8 @@ img {
   max-width: 100%;
 }
 
-.compainsBlock {
-  box-sizing: border-box;
+.page {
+  overflow-x: hidden;
 }
 
 .content {
@@ -67,6 +86,7 @@ img {
   justify-content: flex-start;
   align-items: center;
   color: var(--black-color);
+  position: relative;
 }
 
 .pageBlock {
@@ -650,6 +670,7 @@ img {
 
 .compainsBlock {
   width: 100%;
+  min-height: 1330px;
   display: grid;
   grid-template-areas: "info btnGroup" "slider slider";
   gap: 44px;
@@ -708,6 +729,7 @@ img {
 
 .compainsBlock__description {
   margin-top: 12px;
+  color: var(--gray-2-color);
 }
 
 .btnGroup {
@@ -785,17 +807,177 @@ img {
   padding: 20px 17px;
 }
 
+.getPaidBlock {
+  width: 100%;
+  min-height: 1190px;
+  background-image: url("./images/getPaidBackground.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 95%;
+}
+
+.getPaidBlock__title {
+  margin-top: 420px;
+  max-width: 460px;
+  text-align: center;
+  font-size: 90px;
+  line-height: 90px;
+}
+
+.getPaidBlock__description {
+  margin-top: 12px;
+  max-width: 380px;
+  text-align: center;
+}
+
+.getPaidBlock-btn {
+  margin-top: 80px;
+  width: 213px;
+  border-radius: 131px;
+  padding: 20px 32px;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 200px;
+  padding: 55px 0 40px 0;
+  background-color: var(--gray-thick-color);
+}
+
+.logoAndCreds {
+  width: 246px;
+  max-width: 246px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  gap: 140px;
+  width: 100%;
+}
+
+.footer__logoImg {
+  width: 246px;
+}
+
+.footer__copyrights {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 26px;
+}
+
+.footer__caption {
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: var(--gray-3-color);
+}
+
+.footer__socialBlock {
+  max-width: 155px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer__socialText {
+  color: var(--gray-4-color);
+  font-size: 20px;
+  line-height: 27px;
+  letter-spacing: 0em;
+}
+
+.footer__docLink {
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.footer__documents {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.socialMediaLinks {
+  display: flex;
+  align-items: center;
+  gap: 29px;
+}
+
+.socialLink {
+  width: 26px;
+  height: 26px;
+}
+
+.socialIcon {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.socialIcon:hover path {
+  stroke: var(--purple-color);
+  fill: var(--purple-color);
+}
+
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  align-items: flex-start;
+}
+
+.footer__contactTitle {
+  font-size: 20px;
+  line-height: 27px;
+  color: var(--gray-4-color);
+}
+
+.footer__contactBtn {
+  padding: 16px 24px;
+
+  width: 133px;
+  border-radius: 131px;
+}
+
+.page__footer {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+}
+
 @media screen and (max-width: 1360px) {
-  .headerContainer {
-    padding: 0 20px;
-    width: calc(100% - 40px);
-  }
   .earnMoneyBlock__info {
     padding-right: 0;
     padding-left: 20px;
   }
   .earnMoneyBlock__description {
     padding-bottom: 30px;
+  }
+  .header {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .footer {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .compainsBlock__header {
+    padding-left: 20px;
+  }
+  .compainsBlock__btnGroup {
+    padding-right: 20px;
   }
   .aboutSurveys {
     padding-left: 20px;
@@ -812,17 +994,22 @@ img {
 
 @media screen and (max-width: 1023px) {
   .earnMoneyBlockContainer {
-    min-height: 0;
+    min-height: 578px;
     height: 578px;
-    padding: 0 20px;
   }
   .earnMoneyBlock {
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: auto;
-    padding: 0 20px;
     max-height: 578px;
     gap: 0;
   }
+  .logosList__logo  {
+    padding: 10px 0;
+  }
+  .logo-image {
+    max-width: 80%;
+  }
+  
   .earnMoneyBlock__title {
     font-size: 32px;
     line-height: 40px;
@@ -868,14 +1055,13 @@ img {
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    padding: 0 20px;
-    width: 100vw;
   }
   .header__logo {
     max-width: 137px;
     display: flex;
   }
   .header__navigation-mobile {
+    width: 100%;
     padding: 16px 20px 0 20px;
     display: flex;
     justify-content: space-between;
@@ -944,8 +1130,11 @@ img {
     padding: 40px 5% 16px 5%;
     width: 90%;
     margin-top: 40px;
-    height: 450px;
-    min-height: fit-content;
+    min-height: 506px;
+  }
+
+  .talkingAboutBlock {
+    max-height: 506px;
   }
   .talkingAboutBlock__title {
     font-size: 32px;
@@ -975,6 +1164,142 @@ img {
     margin-top: 0;
 
     padding-bottom: 141px;
+  }
+  .compainsBlock {
+    grid-template-areas: "info info" "slider slider" "btnGroup btnGroup";
+    justify-items: center;
+    justify-content: center;
+    padding-top: 70px;
+    padding-bottom: 155px;
+    gap: 28px;
+  }
+  .compainsBlock__header {
+    max-width: calc(100vw - 40px);
+  }
+  .compainsBlock__caption {
+    font-size: 20px;
+    line-height: 27px;
+  }
+  .compainsBlock__title {
+    font-size: 32px;
+    line-height: 42px;
+    margin-top: 8px;
+  }
+  .compainsBlock__description {
+    color: var(--gray-color);
+    margin-top: 4px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .pageBlock {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0;
+    max-width: 100%;
+  }
+  .compainsBlock__btnGroup {
+    width: 100%;
+    flex-direction: column;
+    gap: 32px;
+    align-items: stretch;
+  }
+
+  .compainsBlock__secondaryBtn {
+    width: 100%;
+  }
+
+  .compainsBlock__primaryBtn {
+    width: 100%;
+    padding: 20px 32px;
+    font-size: 20px;
+    line-height: 24px;
+    height: 64px;
+  }
+  .getPaidBlock {
+    width: 100%;
+    min-height: fit-content;
+    height: 715px;
+    max-height: 715px;
+    background-position: center 95%;
+    background-size: 100%;
+    background-image: url('./images/GetPaidMobile.png')
+  }
+
+  .getPaidBlock__title {
+    margin-top: 280px;
+    max-width: 230px;
+font-size: 32px;
+line-height: 42px;
+letter-spacing: 0em;
+text-align: center;
+  }
+  .getPaidBlock__description {
+font-size: 20px;
+font-weight: 400;
+line-height: 30px;
+letter-spacing: 0em;
+text-align: center;
+margin-top: 12px;
+  }
+  .getPaidBlock-btn {
+    margin-top: 32px;
+  }
+  .footer {
+    flex-direction: column;
+    gap: 32px;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .footer__contactBtn {
+    width: 170px;
+    border-radius: 200px;
+    padding: 20px 32px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .footerContainer {
+    position: relative;
+    height: fit-content;
+    padding: 35px 0 50px 0;
+    width: 100%;
+  }
+  .footer__contact {
+    margin-top: 32px;
+    gap: 20px;
+    align-items: flex-start;
+    order: 3;
+  }
+
+  .socialIcon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .footer__socialBlock {
+    order: 1;
+    max-width: 100%;
+  }
+  .footer__socialText {
+    max-width: 155px;
+  }
+  .footer__documents {
+    order: 2;
+    margin-top: 32px;
+  }
+  .footer__docLink {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .socialMediaLinks {
+    gap: 55px;
+  }
+  .slider {
+    max-width: calc(100vw - 40px);
+    max-height: 737px
+    height: 737px;
   }
 }
 
