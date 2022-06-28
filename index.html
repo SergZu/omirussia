@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#B68DFF" />
     <link rel="icon" type="image/x-icon" href="./images/favicon.png" />
+    <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./customSelect.css" />
     <link rel="stylesheet" href="./styles.css" />
     <title>RobinHood Surveys</title>
   </head>
@@ -209,7 +211,63 @@
             <button class="secondaryBtn compainsBlock__secondaryBtn btn-fullwidth">About campaigns</button>
             <button class="primaryBtn primaryBtn-large compainsBlock__primaryBtn btn-fullwidth">Join community</button>
           </div>
-          <div class="slider"></div>
+          <div class="slider swiper">
+            <div class="customSelect countrySelector">
+              
+            </div>
+            <div class="slider-wrapper swiper-wrapper">
+              <div class="swiper-slide slider-slide slide-1">
+                <div class="info slider__info">
+                  <h3 class="caption slider__caption">$20,000 funded of $50,000 512 donaters</h3>
+                  <h2 class="title slider__title">GlobalGiving Girl Fund</h2>
+                  <p class="description slider__description">Family planning could bring more benefits to more people at less cost than any other single technology now available to the human race. UNICEF. There is no question the people we serve are desperate</p>
+                  <a class="link slider__link" href="#">About this funding</a>
+                </div>
+              </div>
+                <div class="swiper-slide slider-slide slide-2" >
+                  <div class="info slider__info">
+                    <h3 class="caption slider__caption">$20,000 funded of $50,000 512 donaters</h3>
+                    <h2 class="title slider__title">Ukraine Crisis Relief Fund</h2>
+                    <p class="description slider__description">Family planning could bring more benefits to more people at less cost than any other single technology now available to the human race. UNICEF. There is no question the people we serve are desperate</p>
+                    <a class="link slider__link" href="#">About this funding</a>
+                  </div>
+                </div>
+                  <div class="swiper-slide slider-slide slide-3">
+                    <div class="info slider__info">
+                      <h3 class="caption slider__caption">$20,000 funded of $50,000 512 donaters</h3>
+                      <h2 class="title slider__title">Heal One World: Inner-City Preventative Healthcare</h2>
+                      <p class="description slider__description">Family planning could bring more benefits to more people at less cost than any other single technology now available to the human race. UNICEF. There is no question the people we serve are desperate</p>
+                      <a class="link slider__link" href="#">About this funding</a>
+                    </div>
+                  </div>
+                    <div class="swiper-slide slider-slide slide-4">
+                      <div class="info slider__info">
+                        <h3 class="caption slider__caption">$20,000 funded of $50,000 512 donaters</h3>
+                        <h2 class="title slider__title">Healthy School Food: Recipe for the Future</h2>
+                        <p class="description slider__description">Family planning could bring more benefits to more people at less cost than any other single technology now available to the human race. UNICEF. There is no question the people we serve are desperate</p>
+                        <a class="link slider__link" href="#">About this funding</a>
+                      </div>
+                    </div>
+                      <div class="swiper-slide slider-slide slide-5">
+                        <div class="info slider__info">
+                          <h3 class="caption slider__caption">$20,000 funded of $50,000 512 donaters</h3>
+                          <h2 class="title slider__title">Rescue 1 Million Meals with RLC</h2>
+                          <p class="description slider__description">Family planning could bring more benefits to more people at less cost than any other single technology now available to the human race. UNICEF. There is no question the people we serve are desperate</p>
+                          <a class="link slider__link" href="#">About this funding</a>
+                        </div>
+                      </div>
+              </div>
+            <div class="slider__pagination"></div>
+            <!-- <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div> -->
+          </div>
+          <svg height="0" width="0">
+            <defs>
+              <clipPath id="slideBlockMask" clipPathUnits="objectBoundingBox">
+                <path d="M0.507,0.82 C0.779,0.82,0.999,0.597,1,0.39 C1,0.182,0.782,-0.028,0.507,0.003 C0.232,0.035,-0.051,0.128,0.008,0.493 C0.066,0.857,0.29,1,0.398,1 C0.449,1,0.458,0.934,0.465,0.879 C0.469,0.854,0.472,0.832,0.478,0.819 C0.488,0.819,0.497,0.82,0.507,0.82"></path>
+              </clipPath>
+            </defs>
+          </svg>
         </div>
         <div class="trustedBlock pageBlock block-column">
           <h3 class="title trustedBlock__title">Trusted by</h3>
@@ -278,6 +336,6 @@
         </footer> 
       </div>
     </main>
-    <script src="./index.js"></script>
+    <script src="./index.js" type="module"> </script>
   </body>
 </html>
