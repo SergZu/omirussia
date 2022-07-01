@@ -23,7 +23,7 @@ export class CustomSelect {
   }
   _onClick(e) {
     const target = e.target;
-    const type = target.closest(CustomSelect.SELECTOR_DATA).dataset.select;
+    const type = target.closest(CustomSelect.SELECTOR_DATA)?.dataset?.select;
     if (type === "toggle") {
       this.toggle();
     } else if (type === "option") {
@@ -39,7 +39,7 @@ export class CustomSelect {
       selected.classList.remove(CustomSelect.CLASS_NAME_SELECTED);
     }
     option.classList.add(CustomSelect.CLASS_NAME_SELECTED);
-    this._elToggle.innerHTML = option.innerHTML;
+    this._elToggle.innerHTML = option.innerHTML + " campaigns";
     this._elToggle.value = option.dataset["value"];
     this._elToggle.dataset.index = option.dataset["index"];
     this._elRoot.dispatchEvent(new CustomEvent("select.change"));
@@ -137,7 +137,7 @@ CustomSelect.template = (params) => {
       `<li class="select__option${selectedClass}" data-select="option" data-value="${option[0]}" data-index="${index}">${option[1]}</li>`
     );
   });
-  return `<button type="button" class="select__toggle icon icon-${selectedFlag}" name="${name}" value="${selectedValue}" data-select="toggle" data-index="${selectedIndex}">${selectedContent} campaigns</button>
+  return `<button type="button" class="select__toggle icon " name="${name}" value="${selectedValue}" data-select="toggle" data-index="${selectedIndex}">${selectedContent} campaigns 111</button>
     <div class="select__dropdown">
       <ul class="select__options">${items.join("")}</ul>
     </div>`;

@@ -15,6 +15,13 @@
   user-select: none;
   justify-content: space-between;
   min-width: fit-content;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding: 0;
 }
 
 .select__toggle::after {
@@ -63,11 +70,12 @@
 }
 
 .select__option {
-  padding: 0.375em 0.75em;
+  padding: 16px;
   display: flex;
   align-items: center;
   border-radius: 28px;
   white-space: nowrap;
+  background-color: #f1f1f1;
 }
 
 .select.select_show {
