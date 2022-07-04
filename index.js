@@ -82,6 +82,16 @@ setInterval(() => {
   }
 }, 4000);
 
+window.onfocus = () => {
+  const activeButton = document.querySelector(
+    ".slider__bullet-active .progressBar-circular"
+  );
+  activeButton.style.animation = "none";
+  setTimeout(() => {
+    activeButton.style.animation = "";
+  }, 250);
+};
+
 const cookieBtn = document.querySelector(".js-cookies__btn");
 cookieBtn?.addEventListener(
   "click",

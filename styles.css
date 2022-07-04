@@ -1308,7 +1308,7 @@ img {
   z-index: 5;
 }
 
-@keyframes progress-1 {
+@keyframes progress-fill {
   from {
     stroke-dashoffset: 360;
   }
@@ -1321,7 +1321,7 @@ img {
   stroke-dasharray: 360;
   stroke-dashoffset: 1;
   stroke: var(--white-color);
-  animation: progress-1 21.5s linear;
+  animation: progress-fill 21.5s linear;
 }
 
 .bullet-1 {
