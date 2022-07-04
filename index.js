@@ -6,7 +6,7 @@ const textRegexp = /\w+/g;
 const passRegexp = /\w{3,}/g;
 
 const cookieAcceptLCkey = "_app_cookies";
-const initValue = "432524"; // Init number for counter
+const initValue = "9612130"; // Init number for counter
 const counterAnimationDuration = 4750;
 
 const swiperSettings = {

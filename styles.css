@@ -772,6 +772,7 @@ img {
   grid-template-columns: repeat(4, 305px);
   grid-template-rows: 292px;
   gap: 20px;
+  justify-content: center;
 }
 
 .simpleAsOneBlock__infoCard {
@@ -832,6 +833,7 @@ img {
   width: 100vw;
   min-height: 617px;
   padding: 123px 0;
+  position: relative;
   background-color: var(--cyan-color);
   background-image: url("./images/talkingAboutBack.svg");
   background-repeat: no-repeat;
@@ -847,9 +849,6 @@ img {
   flex-direction: column;
   width: 100%;
   max-width: var(--landing-width);
-  background-image: url("./images/TalkingBubble.png");
-  background-position: 80% 100%;
-  background-repeat: no-repeat;
   align-items: center;
   text-align: center;
 }
@@ -865,6 +864,40 @@ img {
   font-size: 24px;
   line-height: 32px;
   margin-top: 8px;
+  max-width: 572px;
+}
+
+.decoration {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.decoration-bubble {
+  width: 178px;
+  height: 207px;
+  left: 76.5%;
+  bottom: 130px;
+  background-image: url("./images/bubble.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.decoration__text {
+  font-family: "ALS Haus";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: var(--black-color);
+}
+
+.bubble__text {
+  transform: rotate(12.07deg);
+  max-width: 158px;
+  padding-bottom: 32px;
 }
 
 .talkingAboutBlock__counterBlock {
@@ -920,7 +953,7 @@ img {
   display: grid;
   grid-template-areas: "info btnGroup" "slider slider";
   gap: 44px;
-  padding: 100px 0 120px 0;
+  padding-top: 100px;
   align-items: flex-end;
 }
 
@@ -935,6 +968,8 @@ img {
   width: 100%;
   max-width: 680px;
   grid-area: info;
+  width: 674px;
+  margin-left: calc(50vw - var(--landing-width) / 2);
 }
 
 .caption {
@@ -950,11 +985,13 @@ img {
 }
 
 .compainsBlock__title {
+  max-width: 674px;
   margin-top: 16px;
 }
 
 .compainsBlock__description {
   margin-top: 12px;
+  max-width: 606px;
   color: var(--gray-2-color);
 }
 
@@ -965,6 +1002,7 @@ img {
 
 .compainsBlock__btnGroup {
   grid-area: btnGroup;
+  margin-right: calc(50vw - var(--landing-width) / 2);
   justify-content: flex-end;
 }
 
@@ -993,6 +1031,7 @@ img {
 
 .trustedBlock {
   min-height: 420px;
+  margin-top: 120px;
 }
 
 .block-column {
@@ -1023,20 +1062,15 @@ img {
   padding: 0;
   list-style: none;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-}
-
-.logosList__logo {
-  padding: 20px 17px;
+  gap: 42.5px;
 }
 
 .getPaidBlock {
   width: 100%;
   min-height: 1190px;
-  background-image: url("./images/getPaidBackground.png");
+  background-image: url("./images/getPaidBackground.svg");
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: 95%;
@@ -1044,7 +1078,7 @@ img {
 
 .getPaidBlock__title {
   margin-top: 420px;
-  max-width: 460px;
+  max-width: 553px;
   text-align: center;
   font-size: 90px;
   line-height: 90px;
@@ -1100,7 +1134,7 @@ img {
 .footer__caption {
   font-family: Lato;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 19px;
   letter-spacing: 0em;
   text-align: left;
@@ -1183,7 +1217,6 @@ img {
 
 .page__footer {
   position: absolute;
-  bottom: 0;
   z-index: 2;
 }
 
@@ -1414,6 +1447,14 @@ img {
   display: flex;
   align-items: center;
   padding-bottom: 8px;
+}
+
+.logosList__logo {
+  display: flex;
+}
+
+.logosList__logo-mobile {
+  display: none;
 }
 
 .contactForm__primaryBtn {
@@ -1758,9 +1799,11 @@ img {
   }
   .compainsBlock__header {
     padding-left: 20px;
+    margin-left: 0;
   }
   .compainsBlock__btnGroup {
     padding-right: 20px;
+    margin-right: 0;
   }
   .aboutSurveys {
     width: 100%;
@@ -1769,7 +1812,7 @@ img {
   .simpleAsOneBlock__infoCards {
     grid-template-columns: repeat(2, 305px);
     grid-template-rows: repeat(2, 292px);
-    justify-content: center;
+    padding-bottom: 40px;
   }
 }
 
@@ -1797,10 +1840,13 @@ img {
     gap: 0;
   }
   .logosList__logo {
-    padding: 10px 0;
+    display: none;
   }
-  .logo-image {
-    max-width: 80%;
+  .logosList__logo-mobile {
+    display: flex;
+    width: 285px;
+    display: flex;
+    flex-direction: column;
   }
 
   .modal__title {
@@ -1905,10 +1951,9 @@ img {
     display: none;
   }
 
-  .modal {
-    /* position: absolute;
-    bottom: initial;
-    align-items: flex-start; */
+  .trustedBlock {
+    padding-bottom: 40px;
+    margin-top: 120px;
   }
 
   .page__registrationForm,
@@ -2072,6 +2117,7 @@ img {
     padding: 40px 5% 16px 5%;
     margin-top: 40px;
     min-height: 506px;
+    overflow: hidden;
   }
 
   .talkingAboutBlock {
@@ -2089,6 +2135,7 @@ img {
     margin-top: 4px;
     font-size: 16px;
     line-height: 19px;
+    max-width: 335px;
   }
   .talkingAboutBlock__counterBlock {
     margin-top: 40px;
@@ -2111,12 +2158,25 @@ img {
 
     padding-bottom: 141px;
   }
+  .decoration-bubble {
+    width: 102px;
+    height: 115px;
+    bottom: 95px;
+    left: 70%;
+  }
+
+  .decoration__text {
+    font-size: 12px;
+    line-height: 15.6px;
+    padding-bottom: 11.5px;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+  }
   .compainsBlock {
     grid-template-areas: "info info" "slider slider" "btnGroup btnGroup";
     justify-items: center;
     justify-content: center;
     padding-top: 70px;
-    padding-bottom: 155px;
     gap: 28px;
   }
   .compainsBlock__header {
@@ -2265,5 +2325,10 @@ img {
   .slider__title,
   .slider__description {
     max-width: 335px;
+  }
+  .counter {
+    justify-content: space-between;
+    width: 100%;
+    letter-spacing: -0.1em;
   }
 }
