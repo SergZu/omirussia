@@ -7,6 +7,7 @@ const passRegexp = /\w{3,}/g;
 
 const cookieAcceptLCkey = "_app_cookies";
 const initValue = "432524"; // Init number for counter
+const counterAnimationDuration = 4750;
 
 const swiperSettings = {
   modules: [Navigation, Pagination, Autoplay, Keyboard],
@@ -80,17 +81,17 @@ setInterval(() => {
     const target = document.querySelector(`.js-digits-${i}`);
     target.style.marginTop = `-${newValue[i - 1]}em`; // Counter constant animation
   }
-}, 4000);
+}, counterAnimationDuration);
 
-window.onfocus = () => {
+window.addEventListener("focus", () => {
   const activeButton = document.querySelector(
     ".slider__bullet-active .progressBar-circular"
   );
   activeButton.style.animation = "none";
   setTimeout(() => {
     activeButton.style.animation = "";
-  }, 250);
-};
+  }, 150);
+});
 
 const cookieBtn = document.querySelector(".js-cookies__btn");
 cookieBtn?.addEventListener(
