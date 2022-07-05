@@ -203,7 +203,7 @@ img {
 }
 
 .form__checkbox-label input:checked ~ .form-checkbox {
-  background-image: url("data:image/svg+xml;utf8,<svg width='24' height='24' viewBox='002424' fill='none' xmlns='http://www.w3.org/2000/svg'><rect width='24' height='24' rx='6' fill='%23B68DFF'/><path d='M7.33203 12.6667L9.9987 15.3334L16.6654 8.66675' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-image: url("./images/icons/checkbox.svg");
 }
 
 .countrySelector {
@@ -267,6 +267,7 @@ img {
   text-align: left;
   padding: 20px;
   box-shadow: none;
+  height: 59px;
 }
 
 .modal__description {
@@ -330,6 +331,17 @@ img {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+.modal-scrollable {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
 .modal-opened {
   display: flex;
   justify-content: center;
@@ -343,6 +355,9 @@ img {
   display: flex;
   width: 26px;
   height: 26px;
+
+  cursor: pointer;
+  user-select: none;
 }
 
 .modal__form {
@@ -584,20 +599,26 @@ img {
 .aboutSurveysContainer {
   width: 100vw;
   min-height: 1080px;
-  background-image: url("./images/Rose.png");
-  background-size: 50% 75%;
+  height: 1080px;
+}
+
+.aboutSurveysBackground {
+  margin: 0 auto;
+  min-height: 945px;
+  max-width: 1440px;
+  background-size: 885px 657px, 504px 814px;
+  background-image: url("./images/hand-open.svg"), url("./images/Rose.svg");
+  background-position: -204px 169px, 927px 122px;
   background-repeat: no-repeat;
-  background-position: right 70%;
 }
 
 .aboutSurveys {
-  margin: 0 auto;
-  padding-top: 135px;
-  min-height: 1030px;
-  width: 100%;
+  margin: 135px auto 0 auto;
+  min-height: 945px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 240px;
 }
 
 .aboutSurveys__infoBlock {
@@ -606,11 +627,11 @@ img {
 }
 
 .makeCharityBlock {
-  margin-right: 80px;
+  padding-top: 44px;
+  width: 583px;
 }
 
 .aboutSurveys__title {
-  max-width: 410px;
   font-size: 32px;
   font-weight: 400;
   line-height: 40px;
@@ -618,11 +639,9 @@ img {
 }
 
 .aboutSurveys__description {
-  max-width: 410px;
   margin-top: 12px;
   font-size: 20px;
   line-height: 30px;
-  padding-bottom: 44px;
   letter-spacing: 0em;
   color: var(--gray-color);
 }
@@ -632,44 +651,64 @@ img {
 }
 
 .easyToEarnBlock__adBlock {
-  width: 50vw;
-  height: 670px;
+  width: 100%;
+  height: 657px;
+  display: flex;
+  align-items: flex-start;
   background-repeat: no-repeat;
-  background-image: url("./images/handWithPhone.png");
+  /* background-image: url("./images/Blue.png"); */
+  /* clip-path: url(#phone-clip); */
+  position: relative;
+}
 
-  background-position: right bottom;
+.easyToEarnBlock__mockImg {
+  background-image: url("./images/phone.png");
+  width: 382px;
+  height: 657px;
+  margin-top: 44px;
+  /* position: absolute; */
+  background-repeat: no-repeat;
 }
 
 .easyToEarnBlock__title {
-  margin-left: 130px;
+  max-width: 410px;
 }
 
 .easyToEarnBlock__description {
-  margin-left: 130px;
-  padding-bottom: 0;
+  max-width: 410px;
 }
 
 .easyToEarnBlock {
+  padding-top: 44px;
+}
+
+.makeCharityBlock__title {
+  max-width: 336px;
+}
+
+.makeCharityBlock__description {
+  max-width: 508px;
 }
 
 .aboutSurveys__infoWrapper {
   width: 583px;
+  height: 605px;
   position: relative;
   background-image: url("./images/Charity.png");
   background-size: cover;
-  aspect-ratio: 53/55;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  transition: all 0.5s ease-in;
+  margin-top: 44px;
   border-radius: 32px;
 }
 
 .aboutSurveys__infoWrapper:hover {
-  box-shadow: inset 0 0 0 40px rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 0 10px 28px rgba(255, 255, 255, 0.6);
 }
 
 .aboutSurveys__infoWrapper:hover .aboutSurveys__infoCard {
   transform: scale(0.9);
+  box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.9);
 }
 
 .aboutSurveys__infoCard {
@@ -678,21 +717,25 @@ img {
   right: 0;
   top: 0;
   bottom: 0;
+  width: 583px;
+  height: 605px;
+  border-radius: 32px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: stretch;
-  border-radius: 32px;
   /* background-color: transparent; */
   z-index: 2;
+  transition: all 0.5s ease-out;
 }
 
 .aboutSurveys__infoText {
   color: var(--silver-color);
-  padding: 32px;
+  padding: 0 32px 32px 32px;
   letter-spacing: 0em;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
-  border-radius: 32px;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
 }
 
 .infoCard__title {
@@ -715,10 +758,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.makeCharityBlock__description {
-  max-width: 508px;
+  margin-top: 12px;
 }
 
 .infoCard__link {
@@ -955,6 +995,7 @@ img {
   gap: 44px;
   padding-top: 100px;
   align-items: flex-end;
+  justify-content: center;
 }
 
 .info {
@@ -1023,7 +1064,8 @@ img {
 
 .slider {
   grid-area: slider;
-  width: 100%;
+  max-width: var(--landing-width);
+  width: var(--landing-width);
   background-color: var(--silver-thin-color);
   min-height: 813px;
   border-radius: 50px;
@@ -1218,6 +1260,7 @@ img {
 .page__footer {
   position: absolute;
   z-index: 2;
+  bottom: 0;
 }
 
 .slider-wrapper {
@@ -1228,6 +1271,13 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top right;
+}
+
+.link-marked {
+  margin-left: 5px;
+  font-weight: 500;
+  font-family: Inter;
+  line-height: 19.3px;
 }
 
 .slide-1 {
@@ -1781,6 +1831,12 @@ img {
   background-image: url("./images/icons/eyeClosed.svg");
 }
 
+@media screen and (max-width: 1439px) {
+  .aboutSurveys {
+    gap: calc(100vw - 1200px);
+  }
+}
+
 @media screen and (max-width: 1380px) {
   .earnMoneyBlock__info {
     padding-right: 0;
@@ -1807,12 +1863,17 @@ img {
   }
   .aboutSurveys {
     width: 100%;
-    gap: 80px;
   }
   .simpleAsOneBlock__infoCards {
     grid-template-columns: repeat(2, 305px);
     grid-template-rows: repeat(2, 292px);
     padding-bottom: 40px;
+  }
+  .slider {
+    max-width: 1024px;
+  }
+  .compainsBlock__header {
+    width: 474px;
   }
 }
 
@@ -1824,7 +1885,6 @@ img {
 
 @media screen and (max-width: 1180px) {
   .easyToEarnBlock__adBlock {
-    width: 60vw;
   }
 }
 
@@ -1847,6 +1907,11 @@ img {
     width: 285px;
     display: flex;
     flex-direction: column;
+  }
+
+  .modal-scrollable {
+    position: absolute;
+    align-items: flex-start;
   }
 
   .modal__title {
@@ -1898,7 +1963,6 @@ img {
     top: 18px;
     right: 18px;
   }
-
   .authBtnGroup {
     flex-direction: column;
   }
@@ -1956,12 +2020,6 @@ img {
     margin-top: 120px;
   }
 
-  .page__registrationForm,
-  .page__loginForm {
-    max-height: 100vh;
-    overflow-y: scroll;
-  }
-
   .slider__title {
     font-size: 32px;
     line-height: 42px;
@@ -1987,12 +2045,10 @@ img {
   }
 
   .easyToEarnBlock__adBlock {
-    width: 100vw;
+    width: 335px;
+    max-width: 100%;
     height: 570px;
-    background-position: 55%;
-    margin-left: -20px;
-    background-image: url("./images/littlePhoneHand.png");
-    background-size: contain;
+    margin-left: 20px;
   }
 
   .slider__description {
@@ -2037,20 +2093,37 @@ img {
   }
   .aboutSurveys {
     flex-direction: column;
-    gap: 60px;
-    padding-bottom: 135px;
-    background-position: 50% 80%;
+    gap: 0;
+    max-width: 600px;
+  }
+
+  .easyToEarnBlock {
+    padding-top: 135px;
+  }
+
+  .aboutSurveysBackground {
+    min-height: 1420px;
+    background-size: 658.8px 469px, 513px 543px;
+    background-position: -100px 241px, 120px 870px;
+  }
+
+  .easyToEarnBlock__mockImg {
+    width: 265.5px;
+    height: 537px;
+    background-size: contain;
   }
 
   .aboutSurveys__infoWrapper {
-    width: 100%;
-    max-width: 530px;
-    align-self: flex-end;
+    width: 395px;
+    height: 395px;
+  }
+  .aboutSurveys__infoCard {
+    width: 395px;
+    height: 395px;
   }
   .aboutSurveys__infoBlock {
     margin: 0 auto;
-    align-items: flex-start;
-    padding-left: 20px;
+    align-items: center;
   }
   .aboutSurveys__title {
     font-family: "ALS Haus";
@@ -2064,6 +2137,7 @@ img {
     line-height: 24px;
     max-width: 90%;
     margin-left: 0;
+    text-align: center;
   }
   .aboutSurveys__description-medium {
     padding-right: 0;
@@ -2071,10 +2145,11 @@ img {
   .aboutSurveysContainer {
     background-size: 100% 42.5%;
     background-position: right 100%;
+    min-height: 1420px;
   }
   .makeCharityBlock {
-    width: 100%;
-    padding-right: 20px;
+    max-width: 100%;
+    padding-top: 0;
   }
   .infoCard__title {
     font-size: 20px;
@@ -2180,6 +2255,8 @@ img {
     gap: 28px;
   }
   .compainsBlock__header {
+    justify-self: flex-start;
+    margin-left: 32px;
     max-width: calc(100vw - 40px);
   }
   .compainsBlock__caption {
@@ -2231,7 +2308,7 @@ img {
     height: 715px;
     max-height: 715px;
     background-position: center 95%;
-    background-size: 100%;
+    background-size: 420px 670px;
     background-image: url("./images/GetPaidMobile.png");
   }
 
@@ -2253,6 +2330,7 @@ img {
   }
   .getPaidBlock-btn {
     margin-top: 32px;
+    max-width: 420px;
   }
   .footer {
     flex-direction: column;
@@ -2311,12 +2389,35 @@ img {
     width: 100vw;
   }
 }
+
+@media screen and (max-width: 720px) {
+  .aboutSurveys {
+    max-width: 375px;
+  }
+  .aboutSurveysBackground {
+    background-size: 658.8px 466px, 513px 543px;
+    background-position: -190px 241px, -20px 900px;
+  }
+  .aboutSurveys__infoBlock {
+    align-items: flex-start;
+  }
+  .aboutSurveys__description {
+    text-align: left;
+  }
+  .aboutSurveys__infoWrapper {
+    width: 335px;
+    height: 355px;
+    align-self: flex-end;
+  }
+  .aboutSurveys__infoCard {
+    width: 335px;
+    height: 355px;
+  }
+}
+
 @media screen and (max-width: 540px) {
   .primaryBtn-large {
     align-self: flex-start;
-  }
-  .easyToEarnBlock__adBlock {
-    background-size: 100vw 570px;
   }
   .slider__info {
     text-align: left;
@@ -2330,5 +2431,40 @@ img {
     justify-content: space-between;
     width: 100%;
     letter-spacing: -0.1em;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .getPaidBlock {
+    background-size: 100%;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .container {
+    max-width: 100%;
+  }
+  .aboutSurveys__infoCard {
+    width: 95vw;
+    height: 95vw;
+  }
+  .aboutSurveys__infoWrapper {
+    width: 95vw;
+    height: 95vw;
+  }
+  .aboutSurveys__title {
+    max-width: 95vw;
+  }
+  .counter {
+    height: 32px;
+    font-size: 32px;
+    line-height: 32px;
+  }
+  .easyToEarnBlock__adBlock {
+    max-width: calc(100vw - 60px);
+  }
+  .aboutSurveysBackground {
+    background-size: 658.8px 466px, 513px 543px;
+    background-position: -197px 291px, -20px 900px;
   }
 }

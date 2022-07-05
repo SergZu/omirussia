@@ -9,9 +9,53 @@ const cookieAcceptLCkey = "_app_cookies";
 const initValue = "9612130"; // Init number for counter
 const counterAnimationDuration = 4750;
 
+const openModal = function () {
+  const modal = document.querySelector(".js-modalContainer");
+  modal?.classList.add("modal-opened");
+};
+
+const openScrollableModal = function () {
+  const modal = document.querySelector(".js-modalScrollContainer");
+  modal?.classList.add("modal-opened");
+};
+
+const closeModal = function () {
+  const modal = document.querySelector(".js-modalContainer");
+  modal?.classList.remove("modal-opened");
+};
+
+const closeScrollableModal = function () {
+  const modal = document.querySelector(".js-modalScrollContainer");
+  modal?.classList.remove("modal-opened");
+};
+
+const closeAllModals = function () {
+  const modalForms = document.querySelectorAll(".modal__form-show");
+  modalForms?.forEach((form) => {
+    form.classList.remove("modal__form-show");
+  });
+};
+
+const openModalWindow = function (targetClass) {
+  const recoveryModal = document.querySelector(targetClass);
+  recoveryModal?.classList.add("modal__form-show");
+};
+
+const closeModalWindow = function (targetClass) {
+  const recoveryModal = document.querySelector(targetClass);
+  recoveryModal?.classList.remove("modal__form-show");
+};
+
+const scrollModalToTop = function () {
+  if (Number(document.documentElement.scrollWidth) < 1024)
+    window.scrollTo(0, 0);
+};
+
 const swiperSettings = {
   modules: [Navigation, Pagination, Autoplay, Keyboard],
   speed: 500,
+  slidesPerView: 1,
+  spaceBetween: 40,
   centeredSlides: true,
   pagination: {
     el: ".slider__pagination",
@@ -84,6 +128,7 @@ setInterval(() => {
 }, counterAnimationDuration);
 
 window.addEventListener("focus", () => {
+  // Animation reset after tab leave
   const activeButton = document.querySelector(
     ".slider__bullet-active .progressBar-circular"
   );
@@ -93,7 +138,7 @@ window.addEventListener("focus", () => {
   }, 150);
 });
 
-const cookieBtn = document.querySelector(".js-cookies__btn");
+const cookieBtn = document.querySelector(".js-cookies__btn"); // Cookies window handler
 cookieBtn?.addEventListener(
   "click",
   () => {
@@ -104,23 +149,26 @@ cookieBtn?.addEventListener(
   { once: true }
 );
 
-const modal = document.querySelector(".modal");
+const modal = document.querySelector(".modal"); // Modal offscreen handler
 modal?.addEventListener("click", () => {
-  modal.classList.remove("modal-opened");
-  const modalForms = document.querySelectorAll(".modal__form-show");
-  modalForms?.forEach((form) => {
-    form.classList.remove("modal__form-show");
-  });
+  closeAllModals();
+  closeModal();
 });
 
-const modalForms = document.querySelectorAll(".modal__form");
+const modalScrollable = document.querySelector(".modal-scrollable");
+modalScrollable.addEventListener("click", () => {
+  closeAllModals();
+  closeScrollableModal();
+});
+
+const modalForms = document.querySelectorAll(".modal__form"); // Prevent closing window when click forms
 modalForms?.forEach((form) => {
   form.addEventListener("click", (evt) => {
     evt.stopPropagation();
   });
 });
 
-const passBtn = document.querySelectorAll(".js-passVisibleBtn");
+const passBtn = document.querySelectorAll(".js-passVisibleBtn"); // Password show/hide handler
 passBtn?.forEach((button) => {
   button.addEventListener("click", (evt) => {
     evt.preventDefault();
@@ -139,7 +187,7 @@ passBtn?.forEach((button) => {
   });
 });
 
-const passInputs = document.querySelectorAll(".js-passwordInput");
+const passInputs = document.querySelectorAll(".js-passwordInput"); // Password validation
 passInputs?.forEach((input) => {
   input.addEventListener("change", (evt) => {
     const value = evt.target.value;
@@ -152,95 +200,83 @@ passInputs?.forEach((input) => {
   });
 });
 
-const forgotPass = document.querySelector(".js-forgotPassword");
+const forgotPass = document.querySelector(".js-forgotPassword"); // Forgot password handler
 forgotPass?.addEventListener("click", () => {
-  const loginForm = document.querySelector(".js-loginForm");
-  const recoveryModal = document.querySelector(".js-recoveryForm");
-  loginForm?.classList.remove("modal__form-show");
-  recoveryModal?.classList.add("modal__form-show");
+  closeModalWindow(".js-loginForm");
+  closeScrollableModal();
+  openModal();
+  openModalWindow(".js-recoveryForm");
 });
 
-const loginPass = document.querySelectorAll(".js-backToLogin");
+const loginPass = document.querySelectorAll(".js-backToLogin"); // Back to login handler
 loginPass.forEach((loginLink) => {
   loginLink.addEventListener("click", () => {
-    const modalForms = document.querySelectorAll(".modal__form-show");
-    modalForms?.forEach((form) => {
-      form.classList.remove("modal__form-show");
-    });
-    const loginForm = document.querySelector(".js-loginForm");
-    loginForm?.classList.add("modal__form-show");
+    closeAllModals();
+    closeModal();
+    openScrollableModal();
+    scrollModalToTop();
+    openModalWindow(".js-loginForm");
   });
 });
 
-const registrationPass = document.querySelector(".js-createAccount");
+const registrationPass = document.querySelector(".js-createAccount"); // From login to registration handler
 registrationPass?.addEventListener("click", () => {
-  const loginForm = document.querySelector(".js-loginForm");
-  const registrationForm = document.querySelector(".js-registrationForm");
-  loginForm?.classList.remove("modal__form-show");
-  registrationForm?.classList.add("modal__form-show");
+  closeModalWindow(".js-loginForm");
+  scrollModalToTop();
+  openModalWindow(".js-registrationForm");
 });
 
-const recoveryBtn = document.querySelector(".js-recoveryFormBtn");
+const recoveryBtn = document.querySelector(".js-recoveryFormBtn"); // Recovery password handler
 recoveryBtn?.addEventListener("click", () => {
-  const modal = document.querySelector(".js-modalContainer");
-  const recoveryForm = document.querySelector(".js-recoveryForm");
   const input = document.querySelector(".js-recoveryEmailInput");
   if (!emailRegexp.test(input.value)) return false;
-  recoveryForm?.classList.remove("modal__form-show");
-  modal?.classList.remove("modal-opened");
+  closeModalWindow(".js-recoveryForm");
+  closeModal();
 });
 
-const loginBtn = document.querySelectorAll(".js-loginBtn");
+const loginBtn = document.querySelectorAll(".js-loginBtn"); // Login buttons handler
 loginBtn?.forEach((button) => {
   button.addEventListener("click", () => {
-    const modal = document.querySelector(".js-modalContainer");
-    const loginForm = document.querySelector(".js-loginForm");
-    modal?.classList.add("modal-opened");
-    loginForm?.classList.add("modal__form-show");
+    openScrollableModal();
+    scrollModalToTop();
+    openModalWindow(".js-loginForm");
   });
 });
 
-const footerBtn = document.querySelector(".js-footerContactBtn");
+const footerBtn = document.querySelector(".js-footerContactBtn"); // Contact us button handler
 footerBtn?.addEventListener("click", () => {
-  const modal = document.querySelector(".js-modalContainer");
-  const contactForm = document.querySelector(".js-contactForm");
-  modal?.classList.add("modal-opened");
-  contactForm?.classList.add("modal__form-show");
+  openModal();
+  openModalWindow(".js-contactForm");
 });
 
-const registrationBtn = document.querySelectorAll(".js-registrationBtn");
+const registrationBtn = document.querySelectorAll(".js-registrationBtn"); // Registration button handler
 registrationBtn?.forEach((button) => {
   button.addEventListener("click", () => {
-    console.log("click");
-    const modal = document.querySelector(".js-modalContainer");
-    const registrationForm = document.querySelector(".js-registrationForm");
-    modal?.classList.add("modal-opened");
-    registrationForm?.classList.add("modal__form-show");
+    openScrollableModal();
+    scrollModalToTop();
+    openModalWindow(".js-registrationForm");
   });
 });
 
-const contactFormBtn = document.querySelector(".js-contactFormBtn");
+const contactFormBtn = document.querySelector(".js-contactFormBtn"); // Contact form handler
 contactFormBtn?.addEventListener("click", () => {
   const emailInput = document.querySelector(".js-contactEmailInput");
   const textInput = document.querySelector(".js-contactTextInput");
   const isValid =
     emailRegexp.test(emailInput?.value) && textRegexp.test(textInput?.value);
   if (!isValid) return false;
-  const contactAnswer = document.querySelector(".js-contactAnswerModal");
-  const contactForm = document.querySelector(".js-contactForm");
-  contactForm?.classList.remove("modal__form-show");
-  contactAnswer?.classList.add("modal__form-show");
+
+  closeModalWindow(".js-contactForm");
+  openModalWindow(".js-contactAnswerModal");
 });
 
-const contactAnswerBtn = document.querySelector(".js-contactAnswerBtn");
+const contactAnswerBtn = document.querySelector(".js-contactAnswerBtn"); // Contact response button handler
 contactAnswerBtn?.addEventListener("click", () => {
-  const modal = document.querySelector(".js-modalContainer");
-  const contactAnswer = document.querySelector(".js-contactAnswerModal");
-  contactAnswer?.classList.remove("modal__form-show");
-  modal?.classList.remove("modal-opened");
+  closeModal();
+  closeModalWindow(".js-contactAnswerModal");
 });
 
-const loginEnterBtn = document.querySelector(".js-loginFormBtn");
+const loginEnterBtn = document.querySelector(".js-loginFormBtn"); // Login form handler
 loginEnterBtn.addEventListener("click", () => {
   const inputValue = document.querySelector(".js-loginEmailInput");
   const form = document.querySelector(".js-loginForm");
@@ -249,12 +285,12 @@ loginEnterBtn.addEventListener("click", () => {
     emailRegexp.test(inputValue?.value) &&
     passWrapper.dataset.validated === "true";
   if (!isValid) return false;
-  const modal = document.querySelector(".js-modalContainer");
-  modal?.classList.remove("modal-opened");
-  form?.classList.remove("modal__form-show");
+
+  closeScrollableModal();
+  closeModalWindow(".js-loginForm");
 });
 
-const registrationEnterBtn = document.querySelector(".js-registrationFormBtn");
+const registrationEnterBtn = document.querySelector(".js-registrationFormBtn"); // Registration handler
 registrationEnterBtn.addEventListener("click", () => {
   const inputValue = document.querySelector(".js-registrationEmailInput");
   const form = document.querySelector(".js-registrationForm");
@@ -263,25 +299,21 @@ registrationEnterBtn.addEventListener("click", () => {
     emailRegexp.test(inputValue?.value) &&
     passWrapper.dataset.validated === "true";
   if (!isValid) return false;
-  const modal = document.querySelector(".js-modalContainer");
-  modal?.classList.remove("modal-opened");
-  form?.classList.remove("modal__form-show");
+
+  closeScrollableModal();
+  closeModalWindow(".js-registrationForm");
 });
 
-const mobileMenuBtn = document.querySelector(".js-menu__mobile");
+const mobileMenuBtn = document.querySelector(".js-menu__mobile"); // Mobile menu handler
 mobileMenuBtn?.addEventListener("click", () => {
   const navigation = document.querySelector(".js-navigation");
   if (mobileMenuBtn.classList.contains("menu__mobile-opened")) {
-    console.log("++");
     mobileMenuBtn.classList.remove("menu__mobile-opened");
-    console.log(navigation);
     navigation.classList.add("header__navlist-closed");
     navigation.classList.remove("header__navlist-opened");
     return false;
   }
-  console.log("--");
   mobileMenuBtn.classList.add("menu__mobile-opened");
   navigation.classList.toggle("header__navlist-closed", false);
   navigation.classList.add("header__navlist-opened");
-  console.log(navigation);
 });
