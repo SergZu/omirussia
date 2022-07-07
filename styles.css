@@ -204,6 +204,7 @@ img {
 
 .form__checkbox-label input:checked ~ .form-checkbox {
   background-image: url("./images/icons/checkbox.svg");
+  border-color: var(--purple-color);
 }
 
 .countrySelector {
@@ -298,6 +299,7 @@ img {
   padding: 20px 20px 20px 32px;
   background-color: var(--white-color);
   z-index: 11;
+  font-family: "ALS Haus";
 }
 
 .cookies__text {
@@ -318,6 +320,7 @@ img {
   line-height: 21px;
   letter-spacing: 0em;
   cursor: pointer;
+  font-family: "ALS Haus";
 }
 
 .modal {
@@ -585,8 +588,10 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  -webkit-clip-path: url(#my-clip-path);
+  width: 643px;
+  height: 736px;
+  min-width: 643px;
+  min-height: 736px;
   clip-path: url(#my-clip-path);
 }
 
@@ -605,10 +610,11 @@ img {
 .aboutSurveysBackground {
   margin: 0 auto;
   min-height: 945px;
-  max-width: 1440px;
-  background-size: 885px 657px, 504px 814px;
+
   background-image: url("./images/hand-open.svg"), url("./images/Rose.svg");
-  background-position: -204px 169px, 927px 122px;
+  /* background-size: 885px 657px, 504px 814px; */
+  background-position: calc(-204px + (50vw - 720px)) 167px,
+    calc(927px + (50vw - 720px)) 122px;
   background-repeat: no-repeat;
 }
 
@@ -828,7 +834,7 @@ img {
 }
 
 .simpleAsOneBlock__infoCard:hover {
-  transition: 0.3 all ease;
+  transition: 1s all ease;
   transform: scale(1.05);
 }
 
@@ -919,7 +925,7 @@ img {
   height: 207px;
   left: 76.5%;
   bottom: 130px;
-  background-image: url("./images/bubble.png");
+  background-image: url("./images/bubbleImg.svg");
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -927,7 +933,7 @@ img {
 .decoration__text {
   font-family: "ALS Haus";
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 21px;
   letter-spacing: 0em;
   text-align: center;
@@ -1069,6 +1075,7 @@ img {
   background-color: var(--silver-thin-color);
   min-height: 813px;
   border-radius: 50px;
+  align-self: baseline;
 }
 
 .trustedBlock {
@@ -1096,6 +1103,7 @@ img {
   line-height: 32px;
   text-align: center;
   margin-top: 10px;
+  color: var(--gray-2-color);
 }
 
 .logosList {
@@ -1815,8 +1823,8 @@ img {
 }
 
 .icon {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   border: none;
   background-color: transparent;
   background-size: cover;
@@ -1840,9 +1848,12 @@ img {
   .aboutSurveys {
     gap: calc(100vw - 1200px);
   }
+  .aboutSurveysBackground {
+    background-position: -206px 168px, calc(927px + (100vw - 1440px)) 122px;
+  }
 }
 
-@media screen and (max-width: 1380px) {
+@media screen and (max-width: 1379px) {
   .earnMoneyBlock__info {
     padding-right: 0;
     padding-left: 20px;
@@ -1880,6 +1891,9 @@ img {
   .compainsBlock__header {
     width: 474px;
   }
+  .earnMoneyBlock {
+    gap: 0;
+  }
 }
 
 .text-icon {
@@ -1888,8 +1902,13 @@ img {
   vertical-align: middle;
 }
 
-@media screen and (max-width: 1180px) {
-  .easyToEarnBlock__adBlock {
+@media screen and (max-width: 1279px) {
+  .earnMoneyBlock__image {
+    width: 463px;
+    height: 579px;
+    min-width: 463px;
+    min-height: 579px;
+    top: 130px;
   }
 }
 
@@ -1903,6 +1922,7 @@ img {
     grid-template-columns: auto;
     max-height: 578px;
     gap: 0;
+    border-top: 1px solid var(--purple-color);
   }
   .logosList__logo {
     display: none;
@@ -1919,12 +1939,19 @@ img {
     align-items: flex-start;
   }
 
-  .modal__title {
-    max-width: 90%;
-  }
-
+  .modal__title,
   .modal__description {
     max-width: 90%;
+    align-self: center;
+  }
+
+  .formInput__passwordWrapper {
+    margin-top: -14px;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
   }
 
   .modal__form {
@@ -1945,6 +1972,9 @@ img {
     width: 100%;
   }
 
+  .infoCard__descriptionBlock {
+    align-items: flex-end;
+  }
   .registrationForm__cases {
     max-width: 100%;
     flex-direction: column;
@@ -1975,7 +2005,7 @@ img {
   .earnMoneyBlock__title {
     font-size: 32px;
     line-height: 40px;
-    margin-top: 28px;
+    margin-top: 20px;
   }
   .earnMoneyBlock__info {
     padding-right: 60px;
@@ -2052,8 +2082,12 @@ img {
   .easyToEarnBlock__adBlock {
     width: 335px;
     max-width: 100%;
-    height: 570px;
+    height: 530px;
     margin-left: 20px;
+  }
+
+  .compainsBlock__btnGroup {
+    align-self: flex-start;
   }
 
   .slider__description {
@@ -2080,6 +2114,8 @@ img {
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
+    border-bottom: 1px solid var(--purple-color);
+    min-height: 52px;
   }
   .header__logo {
     max-width: 137px;
@@ -2093,8 +2129,12 @@ img {
     align-items: center;
   }
   .earnMoneyBlock__image {
-    max-width: 335px;
+    min-width: 335px;
+    min-height: 385px;
+    width: 335px;
+    height: 385px;
     left: calc(50% - 167.5px);
+    top: 0;
   }
   .aboutSurveys {
     flex-direction: column;
@@ -2103,13 +2143,14 @@ img {
   }
 
   .easyToEarnBlock {
-    padding-top: 135px;
+    padding-top: 138px;
+    max-width: calc(100vw - 40px);
   }
 
   .aboutSurveysBackground {
     min-height: 1420px;
     background-size: 658.8px 469px, 513px 543px;
-    background-position: -100px 241px, 120px 870px;
+    background-position: -99px 243px, 120px 820px;
   }
 
   .easyToEarnBlock__mockImg {
@@ -2121,6 +2162,7 @@ img {
   .aboutSurveys__infoWrapper {
     width: 395px;
     height: 395px;
+    margin-top: 32px;
   }
   .aboutSurveys__infoCard {
     width: 395px;
@@ -2140,7 +2182,7 @@ img {
   .aboutSurveys__description {
     font-size: 16px;
     line-height: 24px;
-    max-width: 90%;
+    max-width: 100%;
     margin-left: 0;
     text-align: center;
   }
@@ -2182,9 +2224,20 @@ img {
     margin-left: 10px;
   }
   .simpleAsOneBlock__infoCards {
-    grid-template-columns: minmax(280px, 520px);
-    grid-template-rows: auto;
+    grid-template-columns: 335px;
+    grid-template-rows: repeat(4, 200px);
     max-width: 90%;
+    padding-bottom: 0;
+  }
+  .simpleAsOneBlock__infoCard {
+    height: 200px;
+  }
+  .simpleAsOneBlock__infoCard-second {
+    background-size: 40%;
+  }
+  .simpleAsOneBlock__infoCard-third,
+  .simpleAsOneBlock__infoCard-forth {
+    background-size: 60%;
   }
   .simpleAsOneBlock__title {
     max-width: 90%;
@@ -2194,14 +2247,17 @@ img {
     max-width: 90%;
   }
   .talkingAboutBlockContainer {
-    padding: 40px 5% 16px 5%;
+    padding: 40px 13px 16px 5%;
     margin-top: 40px;
     min-height: 506px;
-    overflow: hidden;
+    background-size: contain;
+    background-position: top center;
+    width: calc(100vw - 20px);
   }
 
   .talkingAboutBlock {
     max-height: 506px;
+    padding: 0;
   }
 
   .aboutSurveys__infoText {
@@ -2210,12 +2266,14 @@ img {
   .talkingAboutBlock__title {
     font-size: 32px;
     line-height: 42px;
+    text-align: center;
   }
   .talkingAboutBlock__description {
     margin-top: 4px;
     font-size: 16px;
     line-height: 19px;
     max-width: 335px;
+    text-align: center;
   }
   .talkingAboutBlock__counterBlock {
     margin-top: 40px;
@@ -2261,7 +2319,6 @@ img {
   }
   .compainsBlock__header {
     justify-self: flex-start;
-    margin-left: 32px;
     max-width: calc(100vw - 40px);
   }
   .compainsBlock__caption {
@@ -2282,7 +2339,7 @@ img {
   }
   .compainsBlock__btnGroup {
     width: 100%;
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 32px;
     align-items: stretch;
     padding: 0 20px;
@@ -2296,6 +2353,9 @@ img {
     padding: 0;
   }
 
+  .text-marked {
+    font-weight: 600;
+  }
   .compainsBlock__secondaryBtn {
     width: 100%;
   }
@@ -2307,14 +2367,23 @@ img {
     line-height: 24px;
     height: 64px;
   }
+
+  .trustedBlock__description {
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--gray-middle-color);
+  }
+
+  .getPaidBlock__description {
+    max-width: 311px;
+  }
   .getPaidBlock {
-    width: 100%;
+    width: 100vw;
     min-height: fit-content;
     height: 715px;
     max-height: 715px;
-    background-position: center 95%;
-    background-size: 420px 670px;
-    background-image: url("./images/GetPaidMobile.png");
+    /* background-position: center 95%; */
+    background-image: url("./images/getPaidMobile.svg");
   }
 
   .getPaidBlock__title {
@@ -2336,6 +2405,13 @@ img {
   .getPaidBlock-btn {
     margin-top: 32px;
     max-width: 420px;
+  }
+  .getPaidBlock .getPaidBlock-btn {
+    align-self: center;
+  }
+  .getPaidBlock {
+    background-size: 100%;
+    margin-bottom: 32px;
   }
   .footer {
     flex-direction: column;
@@ -2365,6 +2441,11 @@ img {
     order: 3;
   }
 
+  .footer__copyrights {
+    gap: 12px;
+    margin-top: 8px;
+  }
+
   .socialIcon {
     width: 32px;
     height: 32px;
@@ -2390,8 +2471,11 @@ img {
   }
   .slider {
     max-height: 737px;
-    height: 737px;
+    min-height: 737px;
     width: 100vw;
+  }
+  .slider__info {
+    bottom: 72px;
   }
 }
 
@@ -2401,7 +2485,7 @@ img {
   }
   .aboutSurveysBackground {
     background-size: 658.8px 466px, 513px 543px;
-    background-position: -190px 241px, -20px 900px;
+    background-position: -198px 248px, 0px 841px;
   }
   .aboutSurveys__infoBlock {
     align-items: flex-start;
@@ -2418,6 +2502,15 @@ img {
     width: 335px;
     height: 355px;
   }
+
+  .slider__info {
+    bottom: 102px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+  .slider-slide {
+    background-size: 100vw 473px;
+  }
 }
 
 @media screen and (max-width: 540px) {
@@ -2432,16 +2525,13 @@ img {
   .slider__description {
     max-width: 335px;
   }
+  .slider-slide {
+    background-size: 100vw 343px;
+  }
   .counter {
     justify-content: space-between;
     width: 100%;
-    letter-spacing: -0.1em;
-  }
-}
-
-@media screen and (max-width: 420px) {
-  .getPaidBlock {
-    background-size: 100%;
+    letter-spacing: -0.05em;
   }
 }
 
@@ -2471,5 +2561,23 @@ img {
   .aboutSurveysBackground {
     background-size: 658.8px 466px, 513px 543px;
     background-position: -197px 291px, -20px 900px;
+  }
+  .simpleAsOneBlock__infoCards {
+    grid-template-columns: 100%;
+  }
+  .simpleAsOneBlock__title {
+    max-width: 95%;
+    font-size: 32px;
+    line-height: 48px;
+  }
+  .slider__pagination {
+    left: 0 !important;
+    gap: 5px;
+  }
+  .earnMoneyBlock__image {
+    width: 100vw;
+    height: 125vw;
+    min-width: 100vw;
+    min-height: 125vw;
   }
 }

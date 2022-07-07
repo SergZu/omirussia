@@ -14,7 +14,7 @@
   line-height: 1.4;
   user-select: none;
   justify-content: space-between;
-  min-width: fit-content;
+  min-width: max-content;
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 600;
@@ -29,7 +29,7 @@
   width: 24px;
   height: 24px;
   flex-shrink: 0;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
   background-image: url("./images/icons/arrow-down.svg");
 }
 
@@ -40,13 +40,13 @@
 .select_show .select__toggle::after {
   transform: rotate(180deg);
   margin-top: 2.5px;
-  margin-left: 0.75rem;
+  margin-left: 0.3rem;
 }
 
 .select__dropdown {
   display: none;
   position: absolute;
-  top: 3.25em;
+  top: 3em;
   left: 0;
   right: 0;
   max-height: 10rem;
@@ -61,7 +61,7 @@
 .select_show .select__dropdown {
   display: flex;
   flex-direction: column;
-  min-width: fit-content;
+  min-width: max-content;
 }
 
 .select__options {
