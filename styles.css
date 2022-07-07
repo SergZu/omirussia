@@ -7,7 +7,7 @@
   --pink-color: #ff9bcb;
   --white-color: #ffffff;
   --black-color: #000000;
-  --black-2-color: #1a1a1a;
+  --black-2-color: #323035;
   --gray-middle-color: #a8a8a8;
   --dark-gray: #919fa9;
   --deep-blue-color: #170586;
@@ -1590,6 +1590,11 @@ img {
   flex-direction: row;
   gap: 16px;
   justify-content: space-between;
+}
+
+.formInput-textArea {
+  height: 116px;
+  resize: none;
 }
 
 .authBtnGroup__button {
