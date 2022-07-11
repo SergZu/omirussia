@@ -83,6 +83,7 @@ img {
 .content {
   width: 100%;
   text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .container {
@@ -600,9 +601,13 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 730px;
+  width: 637px;
   height: 730px;
   clip-path: url(#my-clip-path);
+  background-image: url("./images/Photo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right center;
 }
 
 .svg {
@@ -621,13 +626,12 @@ img {
   margin: 0 auto;
   min-height: 945px;
 
-  background-image: url("./images/hand-open.svg"), url("./images/Rose.svg");
-  /* background-size: 885px 657px, 504px 814px; */
-  background-position: calc(-204px + (50vw - 720px)) 167px,
-    calc(927px + (50vw - 720px)) 122px;
+  background-image: url("./images/Rose.svg");
+  background-size: 710px 814px;
+  background-position: calc(927px + (50vw - 705px)) 122px;
   background-repeat: no-repeat;
 }
-
+/*885px 657px,   calc(-204px + (50vw - 720px)) 167px, */
 .aboutSurveys {
   margin: 135px auto 0 auto;
   min-height: 945px;
@@ -667,23 +671,33 @@ img {
 }
 
 .easyToEarnBlock__adBlock {
-  width: 100%;
+  width: 885px;
   height: 657px;
   display: flex;
   align-items: flex-start;
   background-repeat: no-repeat;
-  /* background-image: url("./images/Blue.png"); */
-  /* clip-path: url(#phone-clip); */
+  background-image: url("./images/hand-open.svg");
+  clip-path: url(#phoneClip);
   position: relative;
+  overflow: hidden;
+  left: -340px;
 }
 
 .easyToEarnBlock__mockImg {
-  background-image: url("./images/phone.png");
+  background-image: url("./images/blue.svg");
   width: 382px;
-  height: 657px;
-  margin-top: 44px;
-  /* position: absolute; */
+  height: 773px;
+  /* margin-top: 44px; */
+  position: absolute;
+  left: 321px;
+  top: 30px;
   background-repeat: no-repeat;
+}
+
+.easyToEarnBlock__image {
+  position: absolute;
+  top: 17.6px;
+  left: 20px;
 }
 
 .easyToEarnBlock__title {
@@ -696,6 +710,7 @@ img {
 
 .easyToEarnBlock {
   padding-top: 44px;
+  max-width: 410px;
 }
 
 .makeCharityBlock__title {
@@ -1877,7 +1892,7 @@ img {
     gap: calc(100vw - 1200px);
   }
   .aboutSurveysBackground {
-    background-position: -206px 168px, calc(927px + (100vw - 1440px)) 122px;
+    background-position: calc(937px + (100vw - 1440px)) 122px;
   }
 }
 
@@ -1888,6 +1903,13 @@ img {
   }
   .earnMoneyBlock__description {
     padding-bottom: 30px;
+  }
+  .aboutSurveys {
+    justify-content: space-between;
+    padding: 0 40px;
+  }
+  .aboutSurveysBackground {
+    background-position: calc(977px + (100vw - 1440px)) 122px;
   }
   .header {
     padding-right: 20px;
@@ -1941,6 +1963,13 @@ img {
     min-width: 463px;
     min-height: 517.6px;
     top: 180px;
+  }
+  .makeCharityBlock__title,
+  .makeCharityBlock__description {
+    align-self: flex-end;
+  }
+  .makeCharityBlock__description {
+    text-align: right;
   }
 }
 
@@ -2034,7 +2063,7 @@ img {
   .earnMoneyBlock__title {
     font-size: 32px;
     line-height: 40px;
-    margin-top: 20px;
+    margin-top: 30px;
   }
   .earnMoneyBlock__info {
     padding-right: 60px;
@@ -2144,10 +2173,11 @@ img {
   }
 
   .easyToEarnBlock__adBlock {
-    width: 335px;
-    max-width: 100%;
-    height: 530px;
-    margin-left: 20px;
+    width: 620px;
+    height: 445px;
+    background-size: 620px 465px;
+    left: 0;
+    margin-top: 15px;
   }
 
   .compainsBlock__btnGroup {
@@ -2198,11 +2228,21 @@ img {
     width: 335px;
     height: 385px;
     left: calc(50% - 167.5px);
-    top: -40px;
+    top: -25px;
+  }
+
+  .makeCharityBlock__title {
+    align-self: initial;
+  }
+
+  .easyToEarnBlock__image {
+    top: 11.6px;
+    left: 14px;
+    width: 238px;
   }
   .aboutSurveys {
     flex-direction: column;
-    gap: 0;
+    gap: 40px;
     max-width: 600px;
   }
 
@@ -2212,15 +2252,16 @@ img {
   }
 
   .aboutSurveysBackground {
-    min-height: 1420px;
-    background-size: 658.8px 469px, 513px 543px;
-    background-position: -99px 243px, 190px 820px;
+    min-height: 1400px;
+    background-size: 513px 543px;
+    background-position: 190px 770px;
   }
 
   .easyToEarnBlock__mockImg {
     width: 265.5px;
     height: 537px;
     background-size: contain;
+    left: 190px;
   }
 
   .aboutSurveys__infoWrapper {
@@ -2256,7 +2297,7 @@ img {
   .aboutSurveysContainer {
     background-size: 100% 42.5%;
     background-position: right 100%;
-    min-height: 1420px;
+    min-height: 1400px;
   }
   .makeCharityBlock {
     max-width: 100%;
@@ -2553,8 +2594,8 @@ img {
     max-width: 375px;
   }
   .aboutSurveysBackground {
-    background-size: 658.8px 467px, 513px 543px;
-    background-position: -198px 246px, 50px 841px;
+    background-size: 513px 543px;
+    background-position: 50px 811px;
   }
   .aboutSurveys__infoBlock {
     align-items: flex-start;
@@ -2580,6 +2621,10 @@ img {
   }
   .slider-slide {
     background-size: 100vw 59.78vw;
+  }
+
+  .easyToEarnBlock__adBlock {
+    left: -170px;
   }
 }
 
@@ -2631,8 +2676,8 @@ img {
     max-width: calc(100vw - 60px);
   }
   .aboutSurveysBackground {
-    background-size: 658.8px 466px, 513px 543px;
-    background-position: -197px 291px, -20px 900px;
+    background-size: 513px 543px;
+    background-position: -20px 900px;
   }
   .simpleAsOneBlock__infoCards {
     grid-template-columns: 100%;
